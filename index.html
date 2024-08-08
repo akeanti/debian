@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debian Linux Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: red;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            width: 50px;
+            cursor: pointer;
+        }
+
+        .navbar .links {
+            display: flex;
+            gap: 8px; /* Decreased gap between links */
+            flex-wrap: nowrap; /* Prevent wrapping */
+        }
+
+        .navbar .links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 6px; /* Adjusted padding */
+            border-radius: 6px;
+            transition: background-color 0.3s;
+            font-size: 12px; /* Adjusted font size */
+        }
+
+        .navbar .links a:hover {
+            background-color: #b30000;
+        }
+
+        .menu-container {
+            margin-top: 50px; /* To ensure the menu starts below the navbar */
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            height: calc(100vh - 50px); /* To ensure the menu does not overlap the navbar */
+            padding-top: 20px;
+            z-index: 999;
+        }
+
+        .menu li {
+            list-style: none;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .menu li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .content {
+            padding: 20px;
+            margin-left: 100px; /* Adjusted for the left menu */
+            margin-top: 60px; /* To avoid overlap with the fixed navbar */
+        }
+
+        @media (max-width: 768px) {
+            .navbar .links a {
+                font-size: 11px; /* Slightly smaller font size for mobile */
+                padding: 5px 4px; /* Adjusted padding for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Openlogo-debianV2.svg" alt="Debian Logo" class="logo">
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">Docs</a>
+            <a href="#">Download</a>
+            <a href="#">Community</a>
+            <a href="#">Support</a>
+        </div>
+    </div>
+
+    <div class="menu-container">
+        <ul class="menu" id="dropdownMenu">
+            <li>Introduction</li>
+            <li>Installation</li>
+            <li>Configuration</li>
+            <li>Troubleshooting</li>
+            <li>Community</li>
+            <li>FAQ</li>
+            <li>Contact Us</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>Debian Linux Documentation</h1>
+        <p>Welcome to the Debian Linux documentation page. Here you will find all the necessary information to get started with Debian, install it, configure it, and troubleshoot any issues.</p>
+    </div>
+
+    <script>
+        document.querySelector('.logo').addEventListener('click', function() {
+            const menu = document.getElementById('dropdownMenu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
